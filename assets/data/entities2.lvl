@@ -9,7 +9,6 @@ Acide nitrique::*acid::HNO₃::HNO₂::H₂NO₃::H₃NO₃
 Acide hypophosphoreux::*acid::H₃PO₂::H₃PO₄::H₂PO₄⁻::H₃PO₃
 Acide phosphoreux::*acid::H₃PO₃::H₃PO₄::H₃PO₂::H₂PO₄⁻
 Acide phosphorique::*acid::H₃PO₄::H₂PO₄⁻::HPO₄²⁻::HPO₄²⁻
-Hydrogénoxalate::Hydrogen oxalate::HC₂O₄⁻::C₂O₄⁻::H₂C₂O₄::H₂CO₄⁻
 Acide oxalique::*acid::H₂C₂O₄::HC₂O₄⁻::H₂CO₄⁻::H₂C₂O₃
 Acide lactique::*acid::C₃H₆O₃::C₃H₅O₃⁻::C₃H₆O::C₂H₅O₂
 Acide maléique::*acid::C₄H₄O₄::C₄H₆O₅::C₆H₄O₅::C₂H₄O₂
@@ -19,7 +18,6 @@ Acide chloreux::*acid::HClO₂::HClO::HClO₃::HClO₄
 Acide chlorique::*acid::HClO₃::HClO₂::HClO₄::HClO
 Acide perchlorique::*acid::HClO₄::HClO₃::HClO₂::HClO₅
 Acide fluorhydrique::Hydrofluoric acid::HF::H₂F₂::HF₃::H₂F
-Sulfure d'hydrogène::Hydrogen sulfide::H₂S::HSO₂::H₃S₂::HSO
 Acide borique::*acid::H₃BO₃::H₂BO₃::H₄BO₃::H₃BO₄
 Acide sulfureux::Sulfurous acid::H₂SO₃::H₂SO₄::H₂S::H₂S₂
 Acide sulfurique::*acid::H₂SO₄::H₂SO₃::H₂S::H₂S₂
@@ -35,6 +33,7 @@ Acide disulfurique::*acid::H₂S₂O₇::HS₂O₇⁻::HSO₃::H₂SO₄
 Acide fluorosulfurique::*acid::HSO₃F::HSO₂F::SO₃F⁻::H₂SO₃F
 Acide carbonique::*acid::H₂CO₃::HCO₃⁻::H₂CO₄::HC₂O₄⁻
 Acide chromique::*acid::H₂CrO₄::HCrO₄⁻::H₂Cr₂O₇::H₂Cr₃O₄
+Acide citrique::*acid::C₆H₈O₇::C₆H₇O₈::C₅H₆O₈::C₇H₅O₈
 // Bases
 Oxyde de sodium::*rev:*i::Na₂O::NaO::Na₃O₂::NaO₄
 Hydroxyde de sodium::*rev:*i::NaOH::Na(OH)₂::Na₂O::NaO
@@ -46,8 +45,10 @@ Oxyde de calcium::*rev:*i::CaO::Ca₂O::Ca(OH)₂::CaOH
 Hydroxyde de calcium::*rev:*i::Ca(OH)₂::CaOH::Ca₂OH::Ca₂OH₄
 Oxyde de baryum::*i:*rev:*i::BaO::Ba₂O::BaO₂::Ba₂O₃
 Hydroxyde de baryum::*i:*rev:*i::Ba(OH)₂::BaOH::Ba₃OH₃::BaH
-Acide citrique::*acid::C₆H₈O₇::b::c::d
+// Ampholytes
+Hydrogénoxalate::Hydrogen oxalate::HC₂O₄⁻::C₂O₄⁻::H₂C₂O₄::H₂CO₄⁻
 // Other
+Sulfure d'hydrogène::Hydrogen sulfide::H₂S::HSO₂::H₃S₂::HSO
 Chlorure de potassium::*rev:*ide::KCl::KCl₂::K₂Cl₂::K₂Cl
 Dichromate de potassium::*rev::K₂Cr₂O₇::KrCrO₃::Kr₂Cr₂::KrCr₂O₄
 Nitrite d'argent::*rev::AgNO₂::AgHNO₃::AgNO₃::Ag₂NO₂

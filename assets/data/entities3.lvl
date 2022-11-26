@@ -1,27 +1,27 @@
 Éthanol::*::C₂H₆O::C₂H₅O::C₃H₆O::C₃H₆O₃
 Cyanoacétylène::*::C₃HN::C₃H₂::C₃O₆::C₃OCH
-Acétonitrile::*::CH₃CN::CH₃N::CH₂CN::d
-Cyclopropénylidène::*::C₃H₂::b::c::d
-Tétrachlorométhane::Carbon tetrachloride::CCl₄::b::c::d
+Acétonitrile::*::CH₃CN::CH₃N::CH₂CN::CH₄CN
+Cyclopropénylidène::*::C₃H₂::C₃H₄::C₃H₃::C₂H₃
+Tétrachlorométhane::Carbon tetrachloride::CCl₄::COCl₄::C₄Cl₄::CHCl₄
 Broroforme::*l::CHBr₃::CHBrO₃::CHBr::CBrO₄
-Chloroforme::*l::CHCl₃::CHCl₂::CCl₄::d
-Glucose::*::C₆H₁₂O₆::b::c::d
-Saccharose::Sucrose::C₁₂H₂₂O₁₁::b::c::d
+Chloroforme::*l::CHCl₃::CHCl₂::CCl₄::CHCl₄
+Glucose::*::C₆H₁₂O₆::C₆H₁₂O₄::C₄H₁₂O₆::C₆H₁₁O₆
+Saccharose::Sucrose::C₁₂H₂₂O₁₁::C₁₂H₂₂O₁₂::C₁₁H₂₂O₁₃::C₁₁H₂₂O₁₂
 Benzène::*::C₆H₆::C₆H₅::C₃H₆::C₆H₃
-Acide benzoïque::*acid::C₆H₅COOH::C₆H₅COO⁻::c::d
-Glycérol::*::C₃H₈O₃::C₃H₆O₃::c::d
-Méthanol::*::CH₄O::CH₄::c::d
-Phosgène::*::COCl₂::CCl₄::CHCl₂::d
-Guanidine::*::CH₅N₃::b::c::d
-Méthylamine::*::CH₅N::b::c::d
-Acide protocatéchique::Protocatechuic acid::C₇H₆O₄::b::c::d
-Alimémazine::*::C₁₈H₂₂N₂S::b::c::d
-Boldine::*::C₁₉H₂₁NO₄::b::c::d
-Urée::Urea::CH₄N₂O::b::c::d
-Tétrachloroaluminate d'argent::*rev::AgAlCl₄::b::c::d
-Hexafluoroarséniate d'argent::Silver hexafluoroarsenate::AgAsF₆::b::c::d
-Acétylure d'argent::*rev:*i::AgC₂H::b::c::de
-Azoture d'argent::Silver azide::AgN₃::b::c::de
-Capsaïcine::*l::C₁₁H₂₇NO₃::b::c::d
-Dopamine::*::C₈H₁₁NO₂::b::c::d
-Docétaxel::*::C₄₃H₅₃O₁₄::b::c::d
+Acide benzoïque::*acid::C₆H₅COOH::C₆H₅COO⁻::C₆H₄COOH::CH₄COOH
+Glycérol::*::C₃H₈O₃::C₃H₆O₃::C₈H₈O₃::C₃H₈O₈
+Méthanol::*::CH₄O::CH₄::C₂H₄O::C₂H₄O₂
+Phosgène::*::COCl₂::CCl₄::CHCl₂::COCl₃
+Guanidine::*::CH₅N₃::CH₅N::CH₅N₂::CH₅N₄
+Méthylamine::*::CH₅N::CH₅N₃::CH₅N₂::CH₅N₄
+Acide protocatéchique::Protocatechuic acid::C₇H₆O₄::C₅H₆O₄::C₄H₄O₄::C₆H₇O₄
+Alimémazine::*::C₁₈H₂₂N₂S::C₁₈H₂₂NS₂::C₁₈H₂₂N₂::C₁₇H₂₂N₂S
+Boldine::*::C₁₉H₂₁NO₄::C₁₉H₂₁NO₃::C₁₉H₂₂NO₄::C₁₉H₂₂N₂O₂
+Urée::Urea::CH₄N₂O::CH₄NO₂::CH₃N₂O::CH₄NO₃
+Tétrachloroaluminate d'argent::*rev::AgAlCl₄::AgAl₄Cl₄::AgAlCl₃::Ag₄AlCl₄
+Hexafluoroarséniate d'argent::Silver hexafluoroarsenate::AgAsF₆::Ag₆As₆F::AgAs₆F₆::AgAs₆F
+Acétylure d'argent::*rev:*i::AgC₂H::AgC₂H₂::AgC₃H::AgCH₂
+Azoture d'argent::Silver azide::AgN₃::AgNO₃::Ag₂N₃::Ag₃N₃
+Capsaïcine::*l::C₁₁H₂₇NO₃::C₁₁H₂₇NO₂::C₁₁H₂₈NO₂::C₁₂H₂₇NO₃
+Dopamine::*::C₈H₁₁NO₂::C₈H₁₁O₂::C₈H₁₁NO₃::C₈H₁₁N₂
+Docétaxel::*::C₄₃H₅₃O₁₄::C₅₃H₄₃O₁₄::C₄₃H₅₃O₁₃::C₄₂H₅₃O₁₄

@@ -203,7 +203,7 @@ fn get_colors(value: u8) -> [Color; 4] {
 
 pub async fn game(shared_components: &mut SharedComponents, filename: &str, music_key: &str, next_tutorial_state: Option<State>) {
     // Score you need to have to go to next level
-    const SCORE_TO_PASS: u32 = 2;
+    const SCORE_TO_PASS: u32 = 20;
     const NUMBER_OF_LIVES: u32 = 3;
     const TIME_LIMIT: f64 = 20.0;
 
