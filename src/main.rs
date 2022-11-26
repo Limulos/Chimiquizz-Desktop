@@ -29,10 +29,12 @@ async fn main() {
     sounds.insert("correct".to_owned(), manager.load_sfx("sfx/correct.wav"));
     sounds.insert("wrong".to_owned(), manager.load_sfx("sfx/wrong.wav"));
     sounds.insert("lost".to_owned(), manager.load_sfx("sfx/lost.wav"));
+    sounds.insert("win".to_owned(), manager.load_sfx("sfx/win.wav"));
 
     let mut texts: NamedHashMap<(String, String)> = NamedHashMap::new();
     let file_content = manager.load_string_from_file("data/texts.txt").await;
     let error_message = "An error occured while parsing texts.txt";
+    
     for line in file_content.lines() {
         if line.starts_with("//") {
             continue;

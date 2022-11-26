@@ -203,7 +203,7 @@ fn get_colors(value: u8) -> [Color; 4] {
 
 pub async fn game(shared_components: &mut SharedComponents, filename: &str, music_key: &str, next_tutorial_state: Option<State>) {
     // Score you need to have to go to next level
-    const SCORE_TO_PASS: u32 = 20;
+    const SCORE_TO_PASS: u32 = 2;
     const NUMBER_OF_LIVES: u32 = 3;
     const TIME_LIMIT: f64 = 20.0;
 
@@ -357,6 +357,7 @@ pub async fn lost(shared_components: &mut SharedComponents) {
         }
         
         if is_mouse_button_pressed(MouseButton::Left) {
+            shared_components.stop_sound("lost");
             shared_components.state = State::Tutorial1;
             break;
         }
@@ -376,10 +377,17 @@ pub async fn lost(shared_components: &mut SharedComponents) {
 }
 
 pub async fn win(shared_components: &mut SharedComponents) {
+    let mut sound_played_once = false;
     let title = shared_components.get_text("won");
 
     loop {
+        if !sound_played_once {
+            shared_components.play_sound("win");
+            sound_played_once = true;
+        }
+        
         if is_mouse_button_pressed(MouseButton::Left) {
+            shared_components.stop_sound("win");
             shared_components.state = State::Tutorial1;
             break;
         }

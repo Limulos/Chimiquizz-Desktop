@@ -148,6 +148,10 @@ impl SharedComponents {
         self.sounds.get_mut(key).unwrap().play();
     }
 
+    pub fn stop_sound(&mut self, key: &str) {
+        self.sounds.get_mut(key).unwrap().stop();
+    }
+    
     fn get_mut_music(&mut self) -> &mut Music {
         self.musics.get_mut(&self.current_music_key).unwrap()
     }
