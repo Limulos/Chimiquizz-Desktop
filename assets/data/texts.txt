@@ -1,0 +1,17 @@
+// Format
+// key_name::french_text::english_text
+level1::Niveau 1::Level 1
+subtext1::Trouvez la bonne formule des ions::Find the right ions' formula
+level2::Niveau 2::Level 2
+subtext2::Trouvez la bonne formule (complexe)::Find the right formula (complex)
+level3::Niveau 3::Level 3
+subtext3::Trouvez la bonne formule (très très complexe)::Find the right formula (really really complex)
+// I use spaces so that the texts are aligned correctly on screen
+// By default, I used English texts for displaying. This is the reason why they don't need spaces
+lives::Vies::Lives
+score:: Score::Score
+time::    Temps::Time
+lost::Vous avez perdu!::You lost!
+lost_subtext::Cliquez pour recommencer::Click to restart
+won::Vous avez gagné!::You won!
+error::Erreur::Error

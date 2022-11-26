@@ -1,0 +1,72 @@
+// --- Anions ---
+Amidure::Azanide::NH₂⁻::NH::NH₃::NH₄⁺
+Hydrure::Hybride::H⁻::H⁺::OH⁻::H₃O⁺
+Hydroxyde::*i::OH⁻::H⁻::H⁺::H₃O⁺
+Oxyde::*i::O²⁻::O₂²⁻::O⁺::OH⁻
+Peroxyde::*i::O₂²⁻::O²⁻::O₃::O₄⁻
+Sulfure::*ide::S²⁻::S⁻::SO⁻::S₂²⁻
+Sulfite::*::SO₃²⁻::SO₄²⁻::S²⁻::S₂O₃²⁻
+Sulfate::*::SO₄²⁻::SO₃²⁻::S₂O₃²⁻::S₄O₆²⁻
+Thiosulfate::*::S₂O₃²⁻::SO₃²⁻::S₄O₆²⁻::S₃O₂²⁻
+Tétrathionate::*::S₄O₆²⁻::S₂O₃²⁻::S₂O₈²⁻::S₃O₂²⁻
+Peroxodisulfate::*::S₂O₈²⁻::S₄O₆²⁻::S₂O₃²⁻::S₃O₂²⁻
+Fluorure::*ide::F⁻::Fe²⁺::F⁺::F₂⁻
+Chlorure::*ide::Cl⁻::Cl⁺::Cl₂⁻::ClO⁻
+Hypochlorite::*::ClO⁻::ClO₂⁻::ClO₃⁻::Cl⁻
+Chlorite::*::ClO₂⁻::ClO₃⁻::Cl⁻::ClO₄⁻
+Chlorate::*::ClO₃⁻::ClO₂⁻::ClO₄⁻::ClO₅⁻
+Perchlorate::*::ClO₄⁻::ClO₃⁻::ClO₂⁻::ClO₅⁻
+Bromure::*ide::Br⁻::Br²⁻::Br⁺::Br²⁺
+Bromate::*::BrO₃⁻::Br²⁻::BrO₂⁻::BrO⁻
+Iodure::*ide::I⁻::I₂⁻::IO₂⁻::IO₃⁻
+Iodate::*::IO₃⁻::IO⁻::I₂⁻::IO₂⁻
+Nitrite::*::NO₂⁻::NO₃⁻::NO⁻::N₂O₂
+Nitrate::*::NO₃⁻::NO₂⁻::NO⁻::N₂O₃
+Phosphate::*::PO₄³⁻::P₂O₇⁴⁻::PO₃²⁻::P₂O₄⁻
+Diphosphate::*::P₂O₇⁴⁻::PO₇⁴⁻::P₂O₄⁻::P₂O₇²⁻
+Carbonate::*::CO₃²⁻::C₃O₂²⁻::C₂O₄²⁻::CO₄⁻
+Oxalate::*::C₂O₄²⁻::HC₂O₄⁻::C₃O₂²⁻::CO₄⁻
+Cyanure::*ide::CN⁻::OCN⁻::SCN⁻::CN²⁻
+Cyanate::*::OCN⁻::CN⁻::SCN⁻::OCN²⁻
+Thiocyanate::*::SCN⁻::OCN⁻::CN⁻::OCN²⁻
+Acétate::*::CH₃COO⁻::CH₃COOH::C₂H₂O₂::C₂H₃O₂
+Borate::*::BO₃³⁻::BO₃²⁻::BO₂³⁻::BO³⁻
+Aluminate::*::Al(OH)₄⁻::Al³⁺::AlO₂²⁺::Al(OH)₂⁻
+Permanganate::*::MnO₄⁻::Mn²⁺::MnO₄⁺::MnO₂²⁻
+Chromate::*::CrO₄²⁻::Cr₂O₇²⁻::CrO₄³⁻::CrO₃⁻
+Dichromate::*::Cr₂O₇²⁻::CrO₄²⁻::CrO₄³⁻::CrO₃⁻
+Hydrogénophosphate::Hydrogen phosphate::HPO₄²⁻::H₂PO₄⁻::H₃PO₄::HPO₄⁻
+Dihydrogénophosphate::Dihydrogen phosphate::H₂PO₄⁻::HPO₄²⁻::H₃PO₄::HPO₄⁻
+// --- Cations ---
+Hydrogène::*l::H⁺::H⁻::OH⁻::H₂O
+Hydronium::*::H₃O⁺::OH⁻::H₂O::H⁺
+Ammonium::*::NH₄⁺::NH₃::NH₂⁻::NH₇
+Lithium::*::Li⁺::Li³⁺::Li²⁺::Li⁻
+Sodium::*::Na⁺::So⁺::Na²⁺::So⁻
+Potassium::*::K⁺::Po²⁺::Po⁻::K⁻
+Argent::Silver::Ag⁺::Ag³⁺::Ag²⁻::Ag⁻
+Cuivre I::Copper I::Cu⁺::Cu²⁺::Cu₂⁺::Cu₂²⁺
+Cuivre II::Copper II::Cu²⁺::Cu₂⁺::Cu₂²⁺::CuO₂⁺
+Mercure I::Mercury I::Hg₂²⁺::Hg²⁺::HgO⁺::Hg₂⁺
+Mercure II::Mercury II::Hg²⁺::Hg⁺::Hg₂⁺::Hg₂²⁺
+Magnésium::*::Mg²⁺::Mg⁺::Mg₂⁺::Mg²⁻
+Calcium::*::Ca²⁺::Ca³⁺::Ca⁺::Ca₂⁺
+Strontium::*::Sr²⁺::Sr²⁻::Sr₂⁺::Sr₂²⁺
+Baryum::*i::Ba²⁺::Br²⁺::Ba⁺::Ba²⁻
+Zinc::*::Zn²⁺::Zn⁺::Zn³⁺::Zn⁻
+Manganèse::*::Mn²⁺::MnO₄⁻::Mn²⁻::MnO₂²⁻
+Nickel::*::Ni²⁺::Ni³⁺::Ni⁴⁺::Ni⁺
+Cobalt II::*::Co²⁺::Co₂⁺::Co²⁻::CoO₂
+Fer II::Iron II::Fe²⁺::Fe₂²⁺::Fe₂⁺::Fe₂³⁺
+Fer III::Iron III::Fe³⁺::Fe²⁺::Fe₃⁺::FeO₃⁻
+Étain II::Tin I::Sn²⁺::Sn²⁻::Sn₂²⁺::Sn₂⁺
+Étain IV::Tin IV::Sn⁴⁺::Sn²⁺::Sn₂²⁺::SnO₄⁺
+Plomb II::Lead II::Pb²⁺::Pb⁴⁺::Pb²⁻::Pb₂⁺
+Plomb IV::Lead IV::Pb⁴⁺::Pb²⁺::PbO₄⁻::Pb₄⁻
+Aluminium::*::Al³⁺::Al²⁺::Al₂³⁺::AlO₃⁺
+Chrome::*ium::Cr³⁺::CrO₄²⁻::Cr²⁺::Cr²⁻
+Titane::*ium::Ti⁴⁺::Ti₂²⁺::Ti⁴⁻::TiO₄⁻
+// Other
+Ammoniac::*l::NH₃::NH₄⁺::NH₂⁻::NH₅
+Méthane::*::CH₄::CH₃::CH₂O₂::C₂H₄
+Actinium::*::Ac³⁺::Ag⁺::Ca::Ac³⁻
