@@ -1,5 +1,11 @@
+#![windows_subsystem = "windows"]
+
 use macroquad::texture::Texture2D;
-use ears::{Music, Sound};
+use macroquad::audio::Sound;
+
+// Since I got installation issues with ears on Windows, I prefer to not use it
+#[cfg(target_os="linux")]
+use ears::Music;
 
 // Includes functions.rs
 mod functions;
@@ -19,17 +25,21 @@ async fn main() {
     textures.insert("bg1".to_owned(), manager.load_tex("img/bg.png").await);
     textures.insert("bg2".to_owned(), manager.load_tex("img/bg2.png").await);
     textures.insert("bg3".to_owned(), manager.load_tex("img/bg3.png").await);
-        
+    
+    #[cfg(target_os="linux")]
     let mut musics: NamedHashMap<Music> = NamedHashMap::new();
+    #[cfg(target_os="linux")]
     musics.insert("music1".to_owned(), manager.load_mus("mus/nk_poltergeist.ogg"));
+    #[cfg(target_os="linux")]
     musics.insert("music2".to_owned(), manager.load_mus("mus/nk_underground.ogg"));
+    #[cfg(target_os="linux")]
     musics.insert("music3".to_owned(), manager.load_mus("mus/dirty_paws_sine_wavs.ogg"));
     
     let mut sounds: NamedHashMap<Sound> = NamedHashMap::new();
-    sounds.insert("correct".to_owned(), manager.load_sfx("sfx/correct.wav"));
-    sounds.insert("wrong".to_owned(), manager.load_sfx("sfx/wrong.wav"));
-    sounds.insert("lost".to_owned(), manager.load_sfx("sfx/lost.wav"));
-    sounds.insert("win".to_owned(), manager.load_sfx("sfx/win.wav"));
+    sounds.insert("correct".to_owned(), manager.load_sfx("sfx/correct.wav").await);
+    sounds.insert("wrong".to_owned(), manager.load_sfx("sfx/wrong.wav").await);
+    sounds.insert("lost".to_owned(), manager.load_sfx("sfx/lost.wav").await);
+    sounds.insert("win".to_owned(), manager.load_sfx("sfx/win.wav").await);
 
     let mut texts: NamedHashMap<(String, String)> = NamedHashMap::new();
     let file_content = manager.load_string_from_file("data/texts.txt").await;
@@ -49,10 +59,19 @@ async fn main() {
         texts.insert(key.to_owned(), (fr_text.to_owned(), en_text.to_owned()));
     }
     
+    #[cfg(target_os="linux")]
     let mut shared_components = SharedComponents::new(
         font,
         textures,
         musics,
+        sounds,
+        texts
+    );
+    
+    #[cfg(target_os="windows")]
+    let mut shared_components = SharedComponents::new(
+        font,
+        textures,
         sounds,
         texts
     );

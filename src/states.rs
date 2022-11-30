@@ -104,14 +104,18 @@ fn show_tutorial_screen(title: &String, instructions: &String, font: &Font) {
 }
 
 pub async fn tutorial(
-    shared_components: &mut SharedComponents, title: String, instructions: String, bg_key: &str, music_key: &str, 
+    shared_components: &mut SharedComponents, title: String, instructions: String, bg_key: &str, _music_key: &str, 
     game_state: State,
 ) {
     shared_components.set_background_key(bg_key);
-    shared_components.set_music_key(music_key);
-        
-    shared_components.play_music();
-    shared_components.restart_music();
+    
+    #[cfg(target_os="linux")]
+    {
+        shared_components.set_music_key(_music_key);
+
+        shared_components.play_music();
+        shared_components.restart_music();
+    }
 
     let start_time = get_time();
     
@@ -201,13 +205,14 @@ fn get_colors(value: u8) -> [Color; 4] {
     ]
 }
 
-pub async fn game(shared_components: &mut SharedComponents, filename: &str, music_key: &str, next_tutorial_state: Option<State>) {
+pub async fn game(shared_components: &mut SharedComponents, filename: &str, _music_key: &str, next_tutorial_state: Option<State>) {
     // Score you need to have to go to next level
     const SCORE_TO_PASS: u32 = 20;
     const NUMBER_OF_LIVES: u32 = 3;
     const TIME_LIMIT: f64 = 20.0;
-
-    shared_components.set_music_key(music_key);
+    
+    #[cfg(target_os="linux")]
+    shared_components.set_music_key(_music_key);
     
     let data = load_data(shared_components, filename).await;
     if data.is_err() {
@@ -251,7 +256,9 @@ pub async fn game(shared_components: &mut SharedComponents, filename: &str, musi
     loop {
         // I put the checks here and not inside the for loop because otherwise it will relaunch the level (even if i break 'main)
         if *score.value() == SCORE_TO_PASS {
+            #[cfg(target_os="linux")]
             shared_components.stop_music();
+            
             shared_components.state = if let Some(tutorial) = next_tutorial_state {
                 tutorial
             } else {
@@ -259,7 +266,9 @@ pub async fn game(shared_components: &mut SharedComponents, filename: &str, musi
             };
             break;
         } else if *lives.value() == 0 || get_time() - start_time > TIME_LIMIT {
+            #[cfg(target_os="linux")]
             shared_components.stop_music();
+            
             shared_components.state = State::Lost;
             break;
         }
@@ -269,6 +278,7 @@ pub async fn game(shared_components: &mut SharedComponents, filename: &str, musi
             break;
         }
         
+        #[cfg(target_os="linux")]
         if is_key_pressed(KeyCode::Space) {
             if shared_components.is_music_playing() {
                 shared_components.pause_music();

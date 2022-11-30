@@ -1,18 +1,20 @@
 use std::collections::HashMap;
 use named_tuple::named_tuple;
-use macroquad::{prelude::*, miniquad::conf::Icon};
-use ears::{Music, Sound, AudioController};
+use macroquad::{prelude::*, miniquad::conf::Icon, audio::*};
 use ::rand::{Rng, seq::SliceRandom}; // I have to write ::rand to avoid confusion with macroquad::rand
 
+#[cfg(target_os="linux")]
+use ears::{Music, AudioController};
+
 pub struct AssetsManager {
-    assets_folder: String,
+    _assets_folder: String,
 }
 
 impl AssetsManager {
     pub fn new(path: &str) -> Self {
         set_pc_assets_folder(path);
         AssetsManager {
-            assets_folder: path.to_owned(),
+            _assets_folder: path.to_owned(),
         }
     }
     
@@ -28,14 +30,15 @@ impl AssetsManager {
             .expect(&format!("Could not load following font: {filename}"))
     }
     
-    pub fn load_sfx(&self, filename: &str) -> Sound {
-        let path = format!("{}/{filename}", self.assets_folder);
-        Sound::new(&path) 
+    pub async fn load_sfx(&self, filename: &str) -> Sound {
+        load_sound(filename)
+            .await
             .expect(&format!("Could not load following sound: {filename}"))
     }
     
+    #[cfg(target_os="linux")]
     pub fn load_mus(&self, filename: &str) -> Music {
-        let path = format!("{}/{filename}", self.assets_folder);
+        let path = format!("{}/{filename}", self._assets_folder);
         Music::new(&path)
             .expect(&format!("Could not load following music: {filename}"))
     }
@@ -74,6 +77,7 @@ pub enum State {
 pub type NamedHashMap<T> = HashMap<String, T>;
 
 /// Struct holding components shared by most of the game states
+#[cfg(target_os="linux")]
 pub struct SharedComponents {
     pub font: Font,
     textures: NamedHashMap<Texture2D>,
@@ -89,7 +93,22 @@ pub struct SharedComponents {
     pub error_message: String,
 }
 
+#[cfg(target_os="windows")]
+pub struct SharedComponents {
+    pub font: Font,
+    textures: NamedHashMap<Texture2D>,
+    sounds: NamedHashMap<Sound>,
+    texts: NamedHashMap<(String, String)>,
+    
+    pub language: String,
+    current_bg_key: String,
+    
+    pub state: State,
+    pub error_message: String,
+}
+
 impl SharedComponents {
+    #[cfg(target_os="linux")]
     pub fn new(font: Font, textures: NamedHashMap<Texture2D>, musics: NamedHashMap<Music>, sounds: NamedHashMap<Sound>,
         texts: NamedHashMap<(String, String)>) -> Self {
         let mut result = SharedComponents {
@@ -104,16 +123,26 @@ impl SharedComponents {
             state: State::LanguageSelection,
             error_message: String::new(),
         };
-
+        
         for music in result.musics.values_mut() {
             music.set_looping(true);
         }
 
-        for sound in result.sounds.values_mut() {
-            sound.set_volume(0.5);
-        }
-
         result
+    }
+    
+    #[cfg(target_os="windows")]
+    pub fn new(font: Font, textures: NamedHashMap<Texture2D>, sounds: NamedHashMap<Sound>,texts: NamedHashMap<(String, String)>) -> Self {
+        SharedComponents {
+            font,
+            textures,
+            sounds,
+            texts,
+            language: String::with_capacity(2), // it will be either "fr" or "en"
+            current_bg_key: "bg1".to_owned(),
+            state: State::LanguageSelection,
+            error_message: String::new(),
+        }
     }
 
     pub fn get_text(&self, key: &str) -> String {
@@ -127,14 +156,12 @@ impl SharedComponents {
     pub fn set_background_key(&mut self, key: &str) {
         self.current_bg_key = key.to_owned();
     }
-
-    pub fn set_music_key(&mut self, key: &str) {
-        self.current_music_key = key.to_owned();
-    }
     
     /// Saves an error message to show it later using error() function
     pub fn set_error_message(&mut self, message: String) {
+        #[cfg(target_os="linux")]
         self.stop_music();
+        
         self.error_message = message;
         self.state = State::Error;
     }
@@ -143,27 +170,38 @@ impl SharedComponents {
         self.language = language;
         self.state = State::Tutorial1;
     }
-
-    pub fn play_sound(&mut self, key: &str) {
-        self.sounds.get_mut(key).unwrap().play();
+    
+    pub fn play_sound(&self, key: &str) {
+        play_sound(*self.sounds.get(key).unwrap(), PlaySoundParams { looped: false, volume: 0.5 });
     }
 
-    pub fn stop_sound(&mut self, key: &str) {
-        self.sounds.get_mut(key).unwrap().stop();
+    pub fn stop_sound(&self, key: &str) {
+        stop_sound(*self.sounds.get(key).unwrap());
+    }
+    
+    pub fn draw_background(&self) {
+        draw_texture(*self.textures.get(&self.current_bg_key).unwrap(), 0.0, 0.0, WHITE);
+    }
+}
+
+#[cfg(target_os="linux")]
+impl SharedComponents {
+    pub fn set_music_key(&mut self, key: &str) {
+        self.current_music_key = key.to_owned();
     }
     
     fn get_mut_music(&mut self) -> &mut Music {
         self.musics.get_mut(&self.current_music_key).unwrap()
     }
-
+    
     pub fn is_music_playing(&self) -> bool {
         self.musics.get(&self.current_music_key).unwrap().is_playing()
     }
-
+    
     pub fn restart_music(&mut self) {
         self.get_mut_music().set_offset(0);
     }
-
+    
     pub fn play_music(&mut self) {
         self.get_mut_music().play();
     }
@@ -174,10 +212,6 @@ impl SharedComponents {
 
     pub fn stop_music(&mut self) {
         self.get_mut_music().stop();
-    }
-
-    pub fn draw_background(&self) {
-        draw_texture(*self.textures.get(&self.current_bg_key).unwrap(), 0.0, 0.0, WHITE);
     }
 }
 
