@@ -15,6 +15,8 @@ You don't have to worry about the order of the wrong answers, as it will be rand
 
 If you don't follow the line format, the game will show an error, with the name of the file and the relevant line.
 
+![An example of error screen in the game](../img/error.png)
+
 Spaces are allowed.
 
 `Acide chlorhydrique::Hydrochloric acid::HCl::KCl::H₂Cl₂::HCl₂`
