@@ -21,10 +21,12 @@ Therefore, I decided to use it only on Linux and remove the musics on Windows.
 Another issue that I found with ears was audio saturation. If the music you choose is not compressed enough, you can hear crackling noises (it will saturate).
 
 ![An example of acceptable music with ears](assets/img/ok.png)
+
 This music will not saturate.
 
 
 ![An example of music that will be saturated with ears](assets/img/saturated.png)
+
 This one will (the waveform reaches the "edges").
 
 This is the reason why the choice of music was quite limited.
@@ -81,7 +83,7 @@ To do so, refer to [this file].
 
 ## License
 
-This project is under MIT License (you can read [LICENSE] file to understand the details).
+This project is under MIT License (you can read the [LICENSE] file to understand the details).
 
 In addition to the license conditions, you have to credit the artists who made the sound effects and the musics, which I did in the file [credits.txt].
 
