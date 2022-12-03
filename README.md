@@ -1,6 +1,6 @@
 # Chimiquizz Desktop
 
-> A game about formulas and chemical names
+> A game with more formulas and more chemical names. 
 
 
 ## Why I made this game
